@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class gameManager : MonoBehaviour
+public class gameManagerTaeseong : MonoBehaviour
 {
     public GameObject Alien1;
     public Transform Player;
