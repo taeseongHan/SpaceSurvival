@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerJihu : MonoBehaviour
 {
-    public Time timeTxt;
+    public TMP_Text timeTxt;
     float time;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         time += Time.deltaTime;
-        // timeTxt.text = time.ToString();
+        int min = (int)time % 3600/60;
+        int sec = (int)time % 3600%60;
+        timeTxt.text = string.Format("{0:D2}:{1:D2}", min, sec);
     }
 }
