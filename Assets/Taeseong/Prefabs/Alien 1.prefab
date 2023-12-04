@@ -266,7 +266,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6317560631726852835}
   - component: {fileID: 7292357478671652687}
-  - component: {fileID: 4152436574109682049}
+  - component: {fileID: -7932852180127777366}
+  - component: {fileID: -3253565628689564091}
+  - component: {fileID: -8811967607556255388}
   m_Layer: 0
   m_Name: Alien 1
   m_TagString: Untagged
@@ -342,7 +344,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4152436574109682049
+--- !u!50 &-7932852180127777366
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693496422069087987}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &-3253565628689564091
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -387,3 +416,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &-8811967607556255388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693496422069087987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16d5bf09c056e04a8a028c14132d445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
