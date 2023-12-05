@@ -12,7 +12,8 @@ public class Bullet : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  
+        // 총알이 위로 쏴지고 일정높이 이상 올라가면 없어지게 하는 코드
         transform.position += new Vector3(0, 0.05f, 0);
         if(transform.position.y > 9.0f)
         {

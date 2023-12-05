@@ -168,7 +168,7 @@ RectTransform:
   m_Children:
   - {fileID: 7005342146111818572}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 835931702643231501}
   - component: {fileID: 7731826970512982458}
   - component: {fileID: 7557789195032592406}
-  - component: {fileID: 2695297229271284920}
   m_Layer: 5
   m_Name: startBtn
   m_TagString: Untagged
@@ -361,7 +360,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2695297229271284920}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StartScene, Assembly-CSharp
         m_MethodName: GameStart
         m_Mode: 1
@@ -373,15 +372,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2695297229271284920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7165361807909012605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d8883dd2b9866f44a11a9e418a7cd38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
