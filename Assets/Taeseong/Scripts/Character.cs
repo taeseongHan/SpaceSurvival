@@ -21,4 +21,14 @@ public class Character : MonoBehaviour
 
         transform.position += new Vector3(x, y) * Time.deltaTime * speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Monster")
+        {
+            Time.timeScale = 0f;
+
+        }
+    }
+
 }
