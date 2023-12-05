@@ -4,11 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManagerJihu : MonoBehaviour
 {
     public TMP_Text timeTxt;
     public TMP_Text currentScoreTxt;
+    public TMP_Text bestScoreTxt;
     private float time;
     private bool isRunning = true;
     public GameObject endPanel;
@@ -31,17 +33,23 @@ public class GameManagerJihu : MonoBehaviour
     {
         if (isRunning) // 게임실행 중에 시간이 간다
         {
-            // 타이머 표시
-            time += Time.deltaTime;
-            int hour = (int)time / 3600;
-            int min = (int)time % 3600 / 60;
-            int sec = (int)time % 3600 % 60;
-            timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+            UpdateTime();
         }
     }
 
+    private string UpdateTime()
+    {
+        // 타이머 표시
+        time += Time.deltaTime;
+        int hour = (int)time / 3600;
+        int min = (int)time % 3600 / 60;
+        int sec = (int)time % 3600 % 60;
+        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+        return timeTxt.text;
+    }
+
     // 게임오버 됐을 때 GameManagerJihu.I.gameOver() 호출
-    public void gameOver()
+    public void GameOver()
     {
         isRunning = false; // 시간 멈추기
         Time.timeScale = 0f;
@@ -49,9 +57,34 @@ public class GameManagerJihu : MonoBehaviour
 
         // 게임오버 시간이 현재 시간에 뜨도록
         currentScoreTxt.text = timeTxt.text;
+
+        if (PlayerPrefs.HasKey("bestScore") == false)
+        {
+            PlayerPrefs.SetFloat("bestScore", time);
+        }
+        else
+        {
+            if (PlayerPrefs.GetFloat("bestScore") < time)
+            {
+                PlayerPrefs.SetFloat("bestScore", time);
+            }
+        }
+        float bestScore = PlayerPrefs.GetFloat("bestScore");
+
+        bestScoreTxt.text = BestTimeScore(bestScore);
     }
 
-    
+    private string BestTimeScore(float bestScore)
+    {
+        // 타이머 표시
+        float time = bestScore;
+        int hour = (int)time / 3600;
+        int min = (int)time % 3600 / 60;
+        int sec = (int)time % 3600 % 60;
+        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+        return timeTxt.text;
+    }
 
-    
+
+
 }

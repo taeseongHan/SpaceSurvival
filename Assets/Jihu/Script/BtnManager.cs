@@ -13,7 +13,7 @@ public class BtnManager : MonoBehaviour
     }
 
     // main 버튼을 누르면 메인화면을 부른다
-    public void mainTitle()
+    public void MainTitle()
     {
         SceneManager.LoadScene("FirstTitle");
         Debug.Log("타이틀");
