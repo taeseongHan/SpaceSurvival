@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameManagerJihu : MonoBehaviour
 {
@@ -47,8 +48,10 @@ public class GameManagerJihu : MonoBehaviour
         Time.timeScale = 0f;
         endPanel.SetActive(true);
 
+
         // 게임오버 시간이 현재 시간에 뜨도록
         currentScoreTxt.text = timeTxt.text;
+        
     }
 
     
