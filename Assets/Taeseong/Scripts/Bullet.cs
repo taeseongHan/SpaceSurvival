@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        // ÃÑ¾ËÀÌ À§·Î ½÷Áö°í ÀÏÁ¤³ôÀÌ ÀÌ»ó ¿Ã¶ó°¡¸é ¾ø¾îÁö°Ô ÇÏ´Â ÄÚµå
+        // ï¿½Ñ¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½Ã¶ó°¡¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½Úµï¿½
         transform.position += new Vector3(0, 0.05f, 0);
         if(transform.position.y > 9.0f)
         {
