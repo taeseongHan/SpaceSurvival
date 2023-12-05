@@ -10,51 +10,82 @@ public class GameManagerJihu : MonoBehaviour
 {
     public TMP_Text timeTxt;
     public TMP_Text currentScoreTxt;
+    public TMP_Text bestScoreTxt;
     private float time;
     private bool isRunning = true;
     public GameObject endPanel;
 
     public static GameManagerJihu I;
 
-    // ½Ì±ÛÅæ
+    // ì‹±ê¸€í†¤
     void Awake()
     {
         I = this;
     }
 
-    // ´Ù½Ã ½ÃÀÛµÇ¸é ½Ã°£ÀÌ °¡µµ·Ï ÇÑ´Ù
+    // ë‹¤ì‹œ ì‹œì‘ë˜ë©´ ì‹œê°„ì´ ê°€ë„ë¡ í•œë‹¤
     void Start()
     {
-        Time.timeScale = 1.0f; // ¸¶ÀÌ³Ê½º´Â 0À¸·Î Ã³¸®µÈ´Ù
+        Time.timeScale = 1.0f; // ë§ˆì´ë„ˆìŠ¤ëŠ” 0ìœ¼ë¡œ ì²˜ë¦¬ëœë‹¤
     }
 
     private void Update()
     {
-        if (isRunning) // °ÔÀÓ½ÇÇà Áß¿¡ ½Ã°£ÀÌ °£´Ù
+        if (isRunning) // ê²Œì„ì‹¤í–‰ ì¤‘ì— ì‹œê°„ì´ ê°„ë‹¤
         {
-            // Å¸ÀÌ¸Ó Ç¥½Ã
-            time += Time.deltaTime;
-            int hour = (int)time / 3600;
-            int min = (int)time % 3600 / 60;
-            int sec = (int)time % 3600 % 60;
-            timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+            UpdateTime();
         }
     }
 
-    // °ÔÀÓ¿À¹ö µÆÀ» ¶§ GameManagerJihu.I.gameOver() È£Ãâ
-    public void gameOver()
+    private string UpdateTime()
     {
-        isRunning = false; // ½Ã°£ ¸ØÃß±â
+        // íƒ€ì´ë¨¸ í‘œì‹œ
+        time += Time.deltaTime;
+        int hour = (int)time / 3600;
+        int min = (int)time % 3600 / 60;
+        int sec = (int)time % 3600 % 60;
+        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+        return timeTxt.text;
+    }
+
+    // ê²Œì„ì˜¤ë²„ ëì„ ë•Œ GameManagerJihu.I.gameOver() í˜¸ì¶œ
+    public void GameOver()
+    {
+        isRunning = false; // ì‹œê°„ ë©ˆì¶”ê¸°
         Time.timeScale = 0f;
         endPanel.SetActive(true);
 
 
-        // °ÔÀÓ¿À¹ö ½Ã°£ÀÌ ÇöÀç ½Ã°£¿¡ ¶ßµµ·Ï
+        // ê²Œì„ì˜¤ë²„ ì‹œê°„ì´ í˜„ì¬ ì‹œê°„ì— ëœ¨ë„ë¡
         currentScoreTxt.text = timeTxt.text;
-        
+
+        if (PlayerPrefs.HasKey("bestScore") == false)
+        {
+            PlayerPrefs.SetFloat("bestScore", time);
+        }
+        else
+        {
+            if (PlayerPrefs.GetFloat("bestScore") < time)
+            {
+                PlayerPrefs.SetFloat("bestScore", time);
+            }
+        }
+        float bestScore = PlayerPrefs.GetFloat("bestScore");
+
+        bestScoreTxt.text = BestTimeScore(bestScore);
     }
 
-    
+    private string BestTimeScore(float bestScore)
+    {
+        // íƒ€ì´ë¨¸ í‘œì‹œ
+        float time = bestScore;
+        int hour = (int)time / 3600;
+        int min = (int)time % 3600 / 60;
+        int sec = (int)time % 3600 % 60;
+        timeTxt.text = string.Format("{0:D2}:{1:D2}:{2:D2}", hour, min, sec);
+        return timeTxt.text;
+    }
 
-    
+
+
 }

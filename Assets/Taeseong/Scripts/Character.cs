@@ -28,7 +28,7 @@ public class Character : MonoBehaviour
         if (collision.gameObject.tag == "Monster")
         {
            
-            GameManagerJihu.I.gameOver();
+            GameManagerJihu.I.GameOver();
         }
     }
 
