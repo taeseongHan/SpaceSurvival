@@ -17,21 +17,21 @@ public class GameManagerJihu : MonoBehaviour
 
     public static GameManagerJihu I;
 
-    // ½Ì±ÛÅæ
+    // ì‹±ê¸€í†¤
     void Awake()
     {
         I = this;
     }
 
-    // ´Ù½Ã ½ÃÀÛµÇ¸é ½Ã°£ÀÌ °¡µµ·Ï ÇÑ´Ù
+    // ë‹¤ì‹œ ì‹œì‘ë˜ë©´ ì‹œê°„ì´ ê°€ë„ë¡ í•œë‹¤
     void Start()
     {
-        Time.timeScale = 1.0f; // ¸¶ÀÌ³Ê½º´Â 0À¸·Î Ã³¸®µÈ´Ù
+        Time.timeScale = 1.0f; // ë§ˆì´ë„ˆìŠ¤ëŠ” 0ìœ¼ë¡œ ì²˜ë¦¬ëœë‹¤
     }
 
     private void Update()
     {
-        if (isRunning) // °ÔÀÓ½ÇÇà Áß¿¡ ½Ã°£ÀÌ °£´Ù
+        if (isRunning) // ê²Œì„ì‹¤í–‰ ì¤‘ì— ì‹œê°„ì´ ê°„ë‹¤
         {
             UpdateTime();
         }
@@ -39,7 +39,7 @@ public class GameManagerJihu : MonoBehaviour
 
     private string UpdateTime()
     {
-        // Å¸ÀÌ¸Ó Ç¥½Ã
+        // íƒ€ì´ë¨¸ í‘œì‹œ
         time += Time.deltaTime;
         int hour = (int)time / 3600;
         int min = (int)time % 3600 / 60;
@@ -48,14 +48,15 @@ public class GameManagerJihu : MonoBehaviour
         return timeTxt.text;
     }
 
-    // °ÔÀÓ¿À¹ö µÆÀ» ¶§ GameManagerJihu.I.gameOver() È£Ãâ
+    // ê²Œì„ì˜¤ë²„ ëì„ ë•Œ GameManagerJihu.I.gameOver() í˜¸ì¶œ
     public void GameOver()
     {
-        isRunning = false; // ½Ã°£ ¸ØÃß±â
+        isRunning = false; // ì‹œê°„ ë©ˆì¶”ê¸°
         Time.timeScale = 0f;
         endPanel.SetActive(true);
 
-        // °ÔÀÓ¿À¹ö ½Ã°£ÀÌ ÇöÀç ½Ã°£¿¡ ¶ßµµ·Ï
+
+        // ê²Œì„ì˜¤ë²„ ì‹œê°„ì´ í˜„ì¬ ì‹œê°„ì— ëœ¨ë„ë¡
         currentScoreTxt.text = timeTxt.text;
 
         if (PlayerPrefs.HasKey("bestScore") == false)
@@ -76,7 +77,7 @@ public class GameManagerJihu : MonoBehaviour
 
     private string BestTimeScore(float bestScore)
     {
-        // Å¸ÀÌ¸Ó Ç¥½Ã
+        // íƒ€ì´ë¨¸ í‘œì‹œ
         float time = bestScore;
         int hour = (int)time / 3600;
         int min = (int)time % 3600 / 60;
