@@ -204,6 +204,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7557789195032592406, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1544717241}
+    - target: {fileID: 7557789195032592406, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557789195032592406, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BtnManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8013243780686073587, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -294,7 +306,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8013243780686073587, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1303192625}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6292358965553091367, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1544717241}
   m_SourcePrefab: {fileID: 100100000, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
 --- !u!1 &558789622
 GameObject:
@@ -1089,6 +1104,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 229762892946b1e4d863b2d9e56dca29, type: 3}
+--- !u!1 &1544717237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6292358965553091367, guid: 559cd10462231824eab999fbc3b69af0, type: 3}
+  m_PrefabInstance: {fileID: 97241520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1544717241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544717237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8883dd2b9866f44a11a9e418a7cd38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1831551414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
