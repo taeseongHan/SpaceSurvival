@@ -27,8 +27,8 @@ public class Character : MonoBehaviour
         // 몬스터와 플레이어가 충돌시 게임이 멈춤
         if (collision.gameObject.tag == "Monster")
         {
-            Time.timeScale = 0f;
-
+           
+            GameManagerJihu.I.gameOver();
         }
     }
 
