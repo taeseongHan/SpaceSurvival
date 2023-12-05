@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1043200539271984676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548693576642454698}
+  - component: {fileID: 3116029466649329390}
+  m_Layer: 0
+  m_Name: CharacterSelectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548693576642454698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043200539271984676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1550.5896, y: 1084.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3116029466649329390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043200539271984676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3a434e470040a4587912c0d3d59545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - name: Earthspa
+    image: {fileID: 21300000, guid: 4f3ca6c2ba5724c4c90aee322cf79137, type: 3}
+    health: 70
+    attack: 100
+    speed: 5
+  - name: Marspa
+    image: {fileID: 21300000, guid: 66e2bee867275422c9de0a02da52d95b, type: 3}
+    health: 100
+    attack: 70
+    speed: 5
+  displayImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  nameTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  healthTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  attackTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  speedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  healthSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  attackSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  speedSliders:
+  - {fileID: 0}
+  - {fileID: 0}
+  characterPanel: {fileID: 0}
+  displayImage: {fileID: 0}
+  nameText: {fileID: 0}
+  healthText: {fileID: 0}
+  attackText: {fileID: 0}
+  speedText: {fileID: 0}
+  healthSlider: {fileID: 0}
+  attackSlider: {fileID: 0}
+  speedSlider: {fileID: 0}
