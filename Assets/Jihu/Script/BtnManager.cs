@@ -9,13 +9,11 @@ public class BtnManager : MonoBehaviour
     public void GameStart()
     {
         SceneManager.LoadScene("MainGame");
-        Debug.Log("메인 게임");
     }
 
     // main 버튼을 누르면 메인화면을 부른다
     public void MainTitle()
     {
         SceneManager.LoadScene("FirstTitle");
-        Debug.Log("타이틀");
     }
 }

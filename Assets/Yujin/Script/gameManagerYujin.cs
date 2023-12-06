@@ -13,12 +13,13 @@ public class gameManagerYujin : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     public void SetSelectedCharacter(CharacterData character)

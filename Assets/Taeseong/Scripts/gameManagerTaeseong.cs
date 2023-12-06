@@ -134,9 +134,6 @@ public class gameManagerTaeseong : MonoBehaviour
         float y = Player.transform.position.y;
         Instantiate(Bullet, new Vector3(x, y, 0), Quaternion.identity);
     }
-
-    
-
 }
 
 
